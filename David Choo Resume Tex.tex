@@ -1,0 +1,199 @@
+\documentclass[9pt]{extarticle}
+
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{graphicx}
+\usepackage{anyfontsize}
+\usepackage[margin=0.5in,paperwidth=8.5in,paperheight=11in]{geometry}
+
+% SECTION FORMATTING
+\titleformat{\section}
+{\huge\uppercase}  % formatting
+{}                  % numbering
+{0em}               % distance between number and text
+{}                  % Text after number but before title
+[\titlerule]
+
+% SUBSECTION FORMATTING
+\titleformat{\subsection}
+{\large\bfseries}   % formatting
+{}                  % numbering
+{0em}               % distance between number and text
+{}                  % Text after number but before title
+
+% \setlength{\textwidth}{5.1in} % set width of text portion
+
+\titlespacing{\section}
+{0em} % indentation
+{1em} % space above section
+{1em} % space after section
+
+\titlespacing{\subsection}
+{0em} % indentation
+{1em} % space above section
+{0em} % space after section
+
+\renewcommand{\maketitle}{
+    \begin{center}
+        {\Huge\bfseries
+        \theauthor}
+        \vspace{2em}
+    \end{center}
+}
+
+% args: {Company}{Position}{Location}{Date}
+\newcommand{\experiencesubsection}[4]{
+    \vspace{0.75em}\large\textbf{#1\hfill{#4}}\\{#2}\hfill{#3}\normalsize
+}
+
+% args: {Company}{Position}{Location}{Date}
+\newcommand{\skillsubsection}[1]{
+    \vspace{0.5em}\Large\textbf{#1}\normalsize\vspace{1em}\\
+}
+
+% args: {Skill}{Skill Level (0-5)}
+\newcommand{\skill}[2]{
+    $\newcount\x
+    \x=#2
+    \loop
+        \advance \x-1
+    \ifnum \x>-1
+    \bullet
+    \repeat
+    \newcount\x
+    \x=#2
+    \loop
+        \advance \x+1
+    \ifnum \x<6
+    \circ
+    \repeat$
+    {\large#1\par\vspace{.75em}}
+}
+
+\renewcommand\labelitemi{---}
+
+\pagenumbering{gobble}
+
+
+
+
+\begin{document}
+
+% EDIT USING TITLING PACKAGE
+% \moveleft5.5\hoffset\centerline{\Huge\bf DAVID CHOO}
+\author{David Choo}
+\maketitle
+
+
+% Draw a horizontal line the whole width of resume:
+% \moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip
+\begin{minipage}[t]{.25\textwidth}
+    \section{Education}
+    \vspace{0.5em}
+    \subsection{University of Illinois\\at Urbana-Champaign}
+    \vspace{0.5em}
+    B.S. Computer Engineering 2020 \\
+
+    \section{Contact}
+    \large
+    {\includegraphics[scale=0.02]{img/mail}}   davidchoo221@gmail.com
+    \vspace{0.5em}\\
+    {\includegraphics[scale=0.02]{img/phone}}  609.356.6360
+    \vspace{0.5em}\\
+    {\includegraphics[scale=0.008]{img/linkedin}}  david-choo
+    \vspace{1em}\\
+
+    \section{Skills}
+    \skillsubsection{Languages}
+    \skill{C/C++}{5}
+    \skill{Java}{4}
+    \skill{Python}{4}
+    \skill{React}{4}
+    \skill{Typescript}{4}
+    \skill{x86}{4}
+    \skill{\LaTeX}{4}
+    \skill{C\#}{3}
+    \skill{SystemVerilog}{3}
+    \skill{Mandarin}{3}
+
+    \skillsubsection{Technical}
+    \skill{Git}{5}
+    \skill{Vim}{5}
+    \skill{GDB}{4}
+    \skill{Unity}{4}
+    \skill{Android Studio}{2}
+
+    \vspace{1.5em}
+    \section{Courses}
+    Computer Systems Engineering \\
+    Algorithms \\
+    Data Structures \\
+    Computer Security \\
+    Applied Cryptography \\
+
+\end{minipage}%  LEAVE THE SPACING ON THESE TWO LINES AS IS
+\hfill\begin{minipage}[t]{.7\textwidth}  % HERE TOO
+    \section{Experience}
+    \experiencesubsection{SimBioSys, Inc.}{Software Developer}{Champaign, IL}{May 2019 to Present}
+    \begin{itemize}
+        \setlength\itemsep{1dd}
+        \item Developed TumorScope, a front-end web application using \textbf{Typescript} and \textbf{React} for oncologists to efficiently select effective neoadjuvant cancer treatments on a case-by-case basis
+        \item Used data visualization tools, such as \textbf{Victory} charting components, to present predicted residual cancer burden and pathological complete response chance for a given treatment
+        \item Designed treatment comparison tool enabling physicians to visualize a tumor's response to various treatments over time
+    \end{itemize}
+
+    \experiencesubsection{Infineon Technologies}{IC Research Intern}{Tewksbury, MA}{May 2018 to Aug. 2018}
+    \begin{itemize}
+        \setlength\itemsep{1dd}
+        \item Analyzed processes to decrease DPPM rates for IC chips
+        \item Developed and tested strategies to increase coverage of testable signals using Assertion Based Verification, especially in analog components
+        \item Established procedures to efficiently insert analog defects using \textbf{C++} and \textbf{SystemVerilog}, thus facilitating measurements of controllability and observability 
+        \item Presented a new methodology for implementation into IC design and verification to better eliminate test escapes before tapeout
+    \end{itemize}
+
+    \experiencesubsection{No Comment A Cappella}{Music Director | Treasurer}{Champaign, IL}{Aug. 2016 to Present}
+    \begin{itemize}
+        \setlength\itemsep{1dd}
+        \item Arrange and teach music in weekly rehearsals (10+ hours/week)
+        \item Fundraised \$5k and allocated funds towards studio recordings, tours, and more
+        \item Competitively perform as nationally ranked a cappella group
+    \end{itemize}
+
+    \section{Projects}
+    \vspace{0.5em}
+    \subsection{PAC-MAN}%{February 2019 to March 2019}
+    \begin{itemize}
+        \setlength\itemsep{1dd}
+        \item Created single-dot and multi-dot PAC-MAN path-finder using \textbf{Python} to implement various search algorithms, experimenting with state representations and path optimization
+    \end{itemize}
+
+    \subsection{Page76}%{October 2018 to December 2018}
+    \begin{itemize}
+        \setlength\itemsep{1dd}
+        \item Worked with team of four to build a simple Linux operating system using \textbf{x86 Assembly} and \textbf{C},
+            implementing features such as resource management (memory virtualization and protection), scheduling,
+            file management, and context switching
+    \end{itemize}
+
+    \subsection{X-Men}
+    \begin{itemize}
+        \setlength\itemsep{1dd}
+        \item Collaborated with four peers to develop X-Men minigames in virtual reality using \textbf{C\#} and \textbf{Unity}
+    \end{itemize}
+
+    \subsection{log(Child)+ --- \textit{PilotPhilly Hackathon}}
+    \begin{itemize}
+        \setlength\itemsep{1dd}
+        \item Created educational Android app, using \textbf{Android Studio} and \textbf{Java}, to incentivize children to solve math problems in exchange for phone time
+        \item Won "Best Social Impact App" Award
+    \end{itemize}
+
+    \subsection{PitchStart --- \textit{HackRU}}
+    \begin{itemize}
+        \setlength\itemsep{1dd}
+        \item Crafted musicianship Android app, using \textbf{Android Studio} and \textbf{Java}, to play pitches when prompted by user's voice instructions; e.g. user says "C E G," and the app plays each note separately
+    \end{itemize}
+
+
+\end{minipage}
+\end{document}

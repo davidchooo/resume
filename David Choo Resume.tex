@@ -33,9 +33,11 @@
 {1em} % space above section
 {0em} % space after section
 
+\newcommand\HUGE{\fontsize{24}{29}\selectfont}
+
 \renewcommand{\maketitle}{
     \begin{center}
-        {\Huge\bfseries
+        {\HUGE\bfseries
         \theauthor}
         \vspace{2em}
     \end{center}
@@ -43,7 +45,7 @@
 
 % args: {Company}{Position}{Location}{Date}
 \newcommand{\experiencesubsection}[4]{
-    \vspace{0.75em}\large\textbf{#1\hfill{#4}}\\{#2}\hfill{#3}\normalsize
+    \vspace{0.75em}\Large\textbf{#1\hfill{#4}}\\{#2}\hfill{#3}\normalsize
 }
 
 % args: {Company}{Position}{Location}{Date}
@@ -101,15 +103,14 @@
     {\includegraphics[scale=0.02]{img/phone}}  609.356.6360
     \vspace{0.5em}\\
     {\includegraphics[scale=0.008]{img/linkedin}}  david-choo
-    \vspace{1em}\\
+    \vspace{0.5em}\\
 
     \section{Skills}
     \skillsubsection{Languages}
     \skill{C/C++}{5}
+    \skill{Python}{5}
+    \skill{Typescript}{5}
     \skill{Java}{4}
-    \skill{Python}{4}
-    \skill{React}{4}
-    \skill{Typescript}{4}
     \skill{x86}{4}
     \skill{C\#}{3}
     \skill{SystemVerilog}{3}
@@ -119,9 +120,10 @@
     \skill{Git}{5}
     \skill{Vim}{5}
     \skill{GDB}{4}
+    \skill{React}{4}
     \skill{\LaTeX}{4}
     \skill{Unity}{4}
-    \skill{Android Studio}{2}
+    \skill{Swagger}{2}
 
     \vspace{1.5em}
     \section{Courses}
@@ -130,14 +132,15 @@
     Computer Security \\
     Applied Cryptography \\
     Computer Systems Engineering \\
+    Virtual Reality \\
 
 \end{minipage}%  LEAVE THE SPACING ON THESE TWO LINES AS IS
 \hfill\begin{minipage}[t]{.7\textwidth}  % HERE TOO
     \section{Experience}
-    \experiencesubsection{SimBioSys, Inc.}{Software Developer}{Champaign, IL}{May 2019 to Present}
+    \experiencesubsection{SimBioSys, Inc.}{Full Stack Developer}{Champaign, IL}{May 2019 to Present}
     \begin{itemize}
         \setlength\itemsep{1dd}
-        \item Developed TumorScope, a front-end web application using \textbf{Typescript} and \textbf{React} for oncologists to efficiently select effective neoadjuvant cancer treatments on a case-by-case basis
+        \item Developed TumorScope, a web application using \textbf{Typescript}, \textbf{React}, and \textbf{Swagger} for oncologists to efficiently select effective neoadjuvant cancer treatments on a case-by-case basis
         \item Used data visualization tools, such as \textbf{Victory} charting components, to present predicted residual cancer burden and pathological complete response chance for a given treatment
         \item Designed treatment comparison tool enabling physicians to visualize a tumor's response to various treatments over time
     \end{itemize}

@@ -4,7 +4,13 @@
 \usepackage{titling}
 \usepackage{graphicx}
 \usepackage{anyfontsize}
-\usepackage[margin=0.5in,paperwidth=8.5in,paperheight=11in]{geometry}
+\usepackage{enumitem}
+\usepackage[paperwidth=8.5in,
+            paperheight=11in,
+            left=0.5in,
+            right=0.5in,
+            top=0.8in,
+            bottom=0.7in]{geometry}
 
 % SECTION FORMATTING
 \titleformat{\section}
@@ -39,16 +45,16 @@
     \begin{center}
         {\HUGE\bfseries
         \theauthor}
-        \vspace{2em}
+        \vspace{2.5em}    % space under name
     \end{center}
 }
 
-% args: {Company}{Position}{Location}{Date}
+% args: {Company}{Role}{Location}{Date}
 \newcommand{\experiencesubsection}[4]{
     \vspace{0.75em}\Large\textbf{#1\hfill{#4}}\\{#2}\hfill{#3}\normalsize
 }
 
-% args: {Company}{Position}{Location}{Date}
+% args: {Company}{Role}{Location}{Date}
 \newcommand{\skillsubsection}[1]{
     \vspace{0.5em}\Large\textbf{#1}\normalsize\vspace{1em}\\
 }
@@ -90,12 +96,6 @@
 % Draw a horizontal line the whole width of resume:
 % \moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip
 \begin{minipage}[t]{.25\textwidth}
-    \section{Education}
-    \vspace{0.5em}
-    \subsection{University of Illinois\\at Urbana-Champaign}
-    \vspace{0.5em}
-    B.S. Computer Engineering 2020 \\
-
     \section{Contact}
     \large
     {\includegraphics[scale=0.02]{img/mail}}   davidchoo221@gmail.com
@@ -107,41 +107,66 @@
 
     \section{Skills}
     \skillsubsection{Languages}
-    \skill{C/C++}{5}
-    \skill{Python}{5}
+    \skill{C\#}{5}
+    \skill{.NET}{5}
     \skill{Typescript}{5}
+    \skill{Python}{5}
+    \skill{C/C++}{4}
     \skill{Java}{4}
-    \skill{x86}{4}
-    \skill{C\#}{3}
+    \skill{x86}{3}
     \skill{SystemVerilog}{3}
-    \skill{Mandarin}{3}
 
     \skillsubsection{Technical}
+    \skill{Azure}{5}
+    \skill{CosmosDB}{5}
+    \skill{React/Redux}{5}
+    \skill{Node}{5}
     \skill{Git}{5}
     \skill{Vim}{5}
     \skill{GDB}{4}
-    \skill{React}{4}
     \skill{\LaTeX}{4}
     \skill{Unity}{4}
-    \skill{Swagger}{2}
 
     \vspace{1.5em}
-    \section{Courses}
-    Algorithms and Computation \\
-    Data Structures \\
-    Computer Security \\
-    Applied Cryptography \\
-    Computer Systems Engineering \\
-    Virtual Reality \\
+    \section{Education}
+    \vspace{0.5em}
+    \subsection{University of Illinois\\at Urbana-Champaign}
+    \vspace{0.5em}
+    B.S. Computer Engineering 2020 \\
 
 \end{minipage}%  LEAVE THE SPACING ON THESE TWO LINES AS IS
 \hfill\begin{minipage}[t]{.7\textwidth}  % HERE TOO
     \section{Experience}
-    \experiencesubsection{SimBioSys, Inc.}{Full Stack Developer}{Champaign, IL}{May 2019 to Present}
+    \experiencesubsection{Microsoft}{Software Engineer II}{New York, NY}{Aug. 2020 to Present}
     \begin{itemize}
         \setlength\itemsep{1dd}
-        \item Developed TumorScope, a web application using \textbf{Typescript}, \textbf{React}, and \textbf{Swagger} for oncologists to efficiently select effective neoadjuvant cancer treatments on a case-by-case basis
-        \item Used data visualization tools, such as \textbf{Victory} charting components, to present predicted residual cancer burden and pathological complete response chance for a given treatment
+        \item Modernize and lead feature delivery in Commercial Marketplace, driving a record \$1B Marketplace Billed Sales in FY23 (135\% YoY increase)
+            \begin{itemize}[topsep=0pt]
+                \setlength\itemsep{1dd}
+                \item Drive improvements to product Pricing and Availability capabilities using \textbf{Azure}, \textbf{C\#}, \textbf{.NET}, and \textbf{Cosmos DB}
+                \item Lead test planning and execution for extending Cloud Solution Provider capabilities to new business offer types
+                \item Redesigned and refactored fast sync audience APIs to expedite call times, resulting in more scenarios for independent
+                    software vendors to quickly update their products' audiences
+                \item Enable support for multiparty private offers by completing co-development with partner team to implement new API contract
+            \end{itemize}
+        \item Design and develop features for AppSource and co-sell storefronts using \textbf{Typescript} and \textbf{React}
+            \begin{itemize}[topsep=0pt]
+                \setlength\itemsep{1dd}
+                \item Added transactability capabilities for Dynamics 365 CE and Power BI Visual product types, opening new streams of revenue
+                \item Migrated Power BI Visual offers from legacy systems into modern commercial marketplace (Partner Center) for more streamlined product management
+                \item Own Co-sell Solution Finder features and improvements, enabling field sellers to efficiently identify appropriate market solutions for Microsoft partners
+            \end{itemize}
+        \item Participate in on-call rotations to ensure 24/7 service reliability, targeting 1-hour time-to-mitigation to unblock ISVs transacting with end customers
+        \item Practice modern engineering principles, including CI/CD pipeline integration, robust telemetry and monitors, and unit/integration/E2E testing 
+    \end{itemize}
+
+    \experiencesubsection{SimBioSys, Inc.}{Full Stack Developer}{Champaign, IL}{May 2019 to May 2020}
+    \begin{itemize}
+        \setlength\itemsep{1dd}
+        \item Developed TumorScope, a web application using \textbf{Typescript}, \textbf{React}, and \textbf{Swagger} for oncologists to efficiently select
+            effective neoadjuvant cancer treatments on a case-by-case basis
+        \item Used data visualization tools, such as \textbf{Victory} charting components, to present predicted residual cancer burden and pathological
+            complete response chance for a given treatment
         \item Designed treatment comparison tool enabling physicians to visualize a tumor's response to various treatments over time
     \end{itemize}
 
@@ -149,54 +174,10 @@
     \begin{itemize}
         \setlength\itemsep{1dd}
         \item Analyzed processes to decrease DPPM rates for IC chips
-        \item Developed and tested strategies to increase coverage of testable signals using Assertion Based Verification, especially in analog components
-        \item Established procedures to efficiently insert analog defects using \textbf{C++} and \textbf{SystemVerilog}, thus facilitating measurements of controllability and observability 
-        \item Presented a new methodology for implementation into IC design and verification to better eliminate test escapes before tapeout
+        \item Developed and tested Assertion based Verification strategies to increase coverage of testable analog signals
+        \item Established and presented new methodology to efficiently insert analog defects using \textbf{C++} and \textbf{SystemVerilog},
+            thus facilitating measurements of controllability and observability 
     \end{itemize}
-
-    \experiencesubsection{No Comment A Cappella}{Music Director | Treasurer}{Champaign, IL}{Aug. 2016 to Present}
-    \begin{itemize}
-        \setlength\itemsep{1dd}
-        \item Arrange and teach music in weekly rehearsals (10+ hours/week)
-        \item Fundraised \$5k and allocated funds towards studio recordings, tours, and more
-        \item Competitively perform as nationally ranked a cappella group
-    \end{itemize}
-
-    \section{Projects}
-    \vspace{0.5em}
-    \subsection{PAC-MAN}%{February 2019 to March 2019}
-    \begin{itemize}
-        \setlength\itemsep{1dd}
-        \item Created single-dot and multi-dot PAC-MAN path-finder using \textbf{Python} to implement various search algorithms, experimenting with state representations and path optimization
-    \end{itemize}
-
-    \subsection{Page76}%{October 2018 to December 2018}
-    \begin{itemize}
-        \setlength\itemsep{1dd}
-        \item Worked with team of four to build a simple Linux operating system using \textbf{x86 Assembly} and \textbf{C},
-            implementing features such as resource management (memory virtualization and protection), scheduling,
-            file management, and context switching
-    \end{itemize}
-
-    \subsection{X-Men}
-    \begin{itemize}
-        \setlength\itemsep{1dd}
-        \item Collaborated with four peers to develop X-Men minigames in virtual reality using \textbf{C\#} and \textbf{Unity}
-    \end{itemize}
-
-    \subsection{log(Child)+ --- \textit{PilotPhilly Hackathon}}
-    \begin{itemize}
-        \setlength\itemsep{1dd}
-        \item Created educational Android app, using \textbf{Android Studio} and \textbf{Java}, to incentivize children to solve math problems in exchange for phone time
-        \item Won "Best Social Impact App" Award
-    \end{itemize}
-
-    \subsection{PitchStart --- \textit{HackRU}}
-    \begin{itemize}
-        \setlength\itemsep{1dd}
-        \item Crafted musicianship Android app, using \textbf{Android Studio} and \textbf{Java}, to play pitches when prompted by user's voice instructions; e.g. user says "C E G," and the app plays each note separately
-    \end{itemize}
-
 
 \end{minipage}
 \end{document}

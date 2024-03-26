@@ -9,7 +9,7 @@
             paperheight=11in,
             left=0.5in,
             right=0.5in,
-            top=0.8in,
+            top=0.7in,
             bottom=0.7in]{geometry}
 
 % SECTION FORMATTING
@@ -56,11 +56,13 @@
 
 % args: {Company}{Role}{Location}{Date}
 \newcommand{\skillsubsection}[1]{
-    \vspace{0.5em}\Large\textbf{#1}\normalsize\vspace{1em}\\
+    \vspace{0.5em}\Large\textbf{#1}\normalsize\vspace{1em}
+    \par
 }
 
 % args: {Skill}{Skill Level (0-5)}
 \newcommand{\skill}[2]{
+    {\hspace{1.0em}}
     $\newcount\x
     \x=#2
     \loop
@@ -103,18 +105,27 @@
     {\includegraphics[scale=0.02]{img/phone}}  609.356.6360
     \vspace{0.5em}\\
     {\includegraphics[scale=0.008]{img/linkedin}}  david-choo
-    \vspace{0.5em}\\
+    \vspace{2.0em}\\
+
+    \section{Education}
+    \vspace{0.5em}
+    \subsection{University of Illinois at\\Urbana-Champaign}
+    \vspace{0.5em}
+    B.S. Computer Engineering\\ 2020
+    \vspace{2.0em}\\
 
     \section{Skills}
     \skillsubsection{Languages}
     \skill{C\#}{5}
     \skill{.NET}{5}
+    \skill{JavaScript}{5}
     \skill{Typescript}{5}
     \skill{Python}{5}
     \skill{C/C++}{4}
     \skill{Java}{4}
-    \skill{x86}{3}
-    \skill{SystemVerilog}{3}
+    %\skill{x86}{3}
+    %\skill{SystemVerilog}{3}
+    \vspace{1.0em}
 
     \skillsubsection{Technical}
     \skill{Azure}{5}
@@ -123,18 +134,12 @@
     \skill{Node}{5}
     \skill{Git}{5}
     \skill{Visual Studio}{5}
-    \skill{VS Code}{5}
-    \skill{Vim}{5}
+    %\skill{VS Code}{5}
+    %\skill{Vim}{5}
     \skill{GDB}{4}
     \skill{\LaTeX}{4}
     %\skill{Unity}{4}
-
     \vspace{1.5em}
-    \section{Education}
-    \vspace{0.5em}
-    \subsection{University of Illinois\\at Urbana-Champaign}
-    \vspace{0.5em}
-    B.S. Computer Engineering 2020 \\
 
 \end{minipage}%  LEAVE THE SPACING ON THESE TWO LINES AS IS
 \hfill\begin{minipage}[t]{.7\textwidth}  % HERE TOO
@@ -151,7 +156,7 @@
                     software vendors to quickly update their products' audiences
                 \item Collaborated on co-development initiatives with partner teams to enable support for multiparty private offers through implementation of a new API contract
             \end{itemize}
-        \item Design and develop features for AppSource and co-sell storefronts using \textbf{Typescript} and \textbf{React}
+        \item Design and develop features for AppSource and co-sell storefronts using \textbf{Typescript} and \textbf{React Redux}
             \begin{itemize}[topsep=0pt]
                 \setlength\itemsep{1dd}
                 \item Added transactability capabilities for Dynamics 365 CE and Power BI Visual product types, creating new revenue streams
@@ -160,14 +165,20 @@
             \end{itemize}
         \item Participate in on-call rotations to ensure 24/7 service reliability, targeting 1-hour time-to-mitigation to resolve issues impacting ISVs transacting with end customers
         \item Practice modern engineering principles, including CI/CD pipeline integration, robust telemetry and monitors, and comprehensive unit/integration/E2E testing 
+        \item Led recruitment efforts, including interviewing and hiring candidates for various teams
+            \begin{itemize}[topsep=0pt]
+                \setlength\itemsep{1dd}
+                \item Collaborated with new team members to ensure smooth onboarding and integration into company projects
+                \item Participated in intern mentoring programs, providing long-term guidance on career growth and company culture
+            \end{itemize}
     \end{itemize}
 
     \experiencesubsection{SimBioSys, Inc.}{Full Stack Developer}{Champaign, IL}{May 2019 to May 2020}
     \begin{itemize}
         \setlength\itemsep{1dd}
-        \item Developed TumorScope, a web application using \textbf{Typescript}, \textbf{React}, and \textbf{Swagger} for oncologists to efficiently select
+        \item Led the creation and development of TumorScope, a web application using \textbf{Typescript} and \textbf{React} for oncologists to efficiently select
             effective neoadjuvant cancer treatments on a case-by-case basis
-        \item Used data visualization tools, such as \textbf{Victory} charting components, to present predicted residual cancer burden and pathological
+        \item Used data visualization tools, such as Victory charting components, to present predicted residual cancer burden and pathological
             complete response chance for a given treatment
         \item Designed treatment comparison tool enabling physicians to visualize a tumor's response to various treatments over time
     \end{itemize}
@@ -175,8 +186,7 @@
     \experiencesubsection{Infineon Technologies}{IC Research Intern}{Tewksbury, MA}{May 2018 to Aug. 2018}
     \begin{itemize}
         \setlength\itemsep{1dd}
-        \item Analyzed processes to decrease DPPM rates for IC chips
-        \item Developed and tested Assertion based Verification strategies to increase coverage of testable analog signals
+        \item Analyzed processes to decrease defective PPM rates for IC chips using Assertion based Verification strategies to increase coverage of testable analog signals
         \item Established and presented new methodology to efficiently insert analog defects using \textbf{C++} and \textbf{SystemVerilog},
             thus facilitating measurements of controllability and observability 
     \end{itemize}
